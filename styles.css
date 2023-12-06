@@ -2,7 +2,7 @@ cssres/* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
+html, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -18,8 +18,6 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -49,44 +47,92 @@ table {
 /* Base Styles */
 
 * {
-    box-sizing: border-box;
-    font-size: 10px;
+    font-family: "Good Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+body {
+    margin: 60px;
 }
 
 
 /* Header */
 
+.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.header * {
+    padding: 20px;
+}
+
+.header button {
+    width: 160px; 
+    height: 40px;
+}
+
+.book-valuation-button {
+    background-color: rgb(123, 214, 123);
+    color: black
+}
+
 
 /* Hero */
 
-* {
-    margin: 40px;
-}
-
-.headline, .tagline {
-    font-family: "Good Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    letter-spacing: 1px;
+.hero {
+    display: grid;
+    grid-template-columns: 50%, 50%;
+    grid-template-rows: 10%, 10%, 10%, 10%, 10%, 10%, 10%, 10%, 10%, 10%,;
 }
 
 .headline {
+    float: left;
+    top: 100px;
+    left: 30px;
     font-size: 40px;
     font-weight: bold;
     letter-spacing: 1px;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    }
+
+
+.tagline {
+    letter-spacing: 1px;
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+}
+
+.postcode {
+    grid-column: 1 / 2;
+    grid-row: 7 / 9;
+}
+
+.main-image {
+    grid-column: 2 / 3;
+    grid-row: 2 / 10;
 }
 
 .green-underline {
     text-decoration: underline; 
     text-decoration-color: rgb(123, 214, 123);
-
+    
 }
 
-.main-image {
-    float: left;
-}
+
+
 /* Endorsments */
+.endorsements-container {
+    height: 80px;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    top: 400px;
+}
 
 
 /* Reviews */
+
 
 
 /* About-us */
@@ -96,3 +142,50 @@ table {
 
 
 /* Footer */
+
+.footer {
+    padding: 65px;
+    background-color: rgba(0, 0, 0, 0.892);
+    display: flex;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 40%, 30%, 30%;
+    grid-template-rows: 25%, 50%, 25%;
+}
+
+.footer-headline {
+    grid-row: 1 / 2;
+    text-align: start;
+}
+
+.menu-1 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    line-height: 2em;
+}
+
+.menu-2 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    line-height: 2em;
+}
+
+.menu-3 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    line-height: 2em;
+}
+
+h3 {
+    font-size: 60px;
+    color: whitesmoke;
+}
+
+.footer p, .footer a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.highlighted-text {
+    background-color: green;
+}
